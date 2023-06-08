@@ -2,6 +2,7 @@ const darkModeToggle = document.getElementById("dark-mode-toggle");
 const body = document.body;
 const heading = document.getElementById("heading");
 
+//dark/light mode 
 darkModeToggle.addEventListener("change", () => {
     body.classList.toggle("dark-mode");
     if (darkModeToggle.checked) {
@@ -11,6 +12,7 @@ darkModeToggle.addEventListener("change", () => {
     }
 });
 
+//adding task 
 document.querySelector(".add").addEventListener("click", () => {
     const inputTxt = document.querySelector(".input");
     const addList = document.querySelector(".addList");
@@ -32,6 +34,7 @@ document.querySelector(".add").addEventListener("click", () => {
     });
 });
 
+//delete task
 const deleteButtons = document.querySelectorAll(".delete");
 deleteButtons.forEach(button => {
     button.addEventListener("click", () => {
