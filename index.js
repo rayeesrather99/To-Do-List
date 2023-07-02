@@ -41,3 +41,26 @@ deleteButtons.forEach(button => {
         button.parentNode.remove();
     });
 });
+
+//search button 
+    
+const searchInput = document.querySelector('.search-input');
+searchInput.addEventListener('keyup', filterTasks);
+
+function filterTasks() {
+    const searchTerm = searchInput.value.toLowerCase();
+
+    // all the list items
+    const listItems = document.querySelectorAll('.addList li');
+
+    // Iterate over each item in the list
+    listItems.forEach((item) => {
+        const taskName = item.querySelector('span').textContent.toLowerCase();
+
+        // taskName.includes(searchTerm) -->[ here it means ,is the taskname that appeared in search input is in the list of items if yes then it will displayed otherwise none]
+        if (taskName.includes(searchTerm)) {
+            item.style.display = 'flex'; // Show the list item
+        } else {
+            item.style.display = 'none'; // Hide the list item
+        }
+    });
