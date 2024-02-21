@@ -11,8 +11,27 @@ darkModeToggle.addEventListener("change", () => {
     }
 });
 
-document.querySelector(".add").addEventListener("click", () => {
-    const inputTxt = document.querySelector(".input");
+
+// Added a new feature for desktop people dont have to use mouse to do click they can use Enter Button ---
+// by muzamil gashru
+
+document.querySelector(".input").addEventListener("keydown", function(event){
+
+  if(event.key === 'Enter'){
+   
+    added();       
+  }
+
+});
+
+document.querySelector(".add").addEventListener("click", function(){
+
+    added();
+});
+
+function added(){
+
+    let inputTxt = document.querySelector(".input");
     const addList = document.querySelector(".addList");
 
     if (inputTxt.value === "") {
@@ -30,7 +49,12 @@ document.querySelector(".add").addEventListener("click", () => {
             button.parentNode.remove();
         });
     });
-});
+
+
+};
+
+/// -- contribution ends here --
+
 
 // remove task 
 const deleteButtons = document.querySelectorAll(".delete");
